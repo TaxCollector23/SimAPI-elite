@@ -239,7 +239,7 @@ export async function POST(req: Request) {
       ...result,
       engine: engineSource === "python" ? "python-1300-checks" : "typescript-20-checks",
       python_backend: engineSource === "python",
-      ai: usePythonAi ? pythonAi : mapAi(review),
+      ai: mapAi(review),
       ai_status: review.enabled ? (review.error ? "error" : "completed") : "disabled",
       ai_running: false,
       request_id: requestId,
